@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: modelserver-nov29-1-gitops
+  description: This is GitOps manifest for modelserver-nov29-1   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: modelserver-nov29-1
+    janus-idp.io/tekton: modelserver-nov29-1 
+    backstage.io/kubernetes-id: modelserver-nov29-1 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:modelserver-nov29-1
